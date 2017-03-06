@@ -2,3 +2,7 @@ language: java
 jdk: oraclejdk8
 sudo: false
 script: mvn clean verify
+branches:
+    only:
+    -   dev
+    -   master
