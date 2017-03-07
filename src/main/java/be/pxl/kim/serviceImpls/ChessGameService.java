@@ -11,7 +11,7 @@ public class ChessGameService implements IChessGameService{
 	@Override
 	public String calculateBestMove(ChessGame game) {
 		// TODO Auto-generated method stub
-		return null;
+		return "It works";
 	}
 
 }

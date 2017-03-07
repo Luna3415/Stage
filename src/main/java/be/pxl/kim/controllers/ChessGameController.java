@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import be.pxl.kim.models.ChessGame;
@@ -20,7 +21,12 @@ public class ChessGameController {
 	@Autowired
 	private IChessGameService service;
 	
-	@RequestMapping(value = "/bestmove", method = RequestMethod.POST, consumes="application/json; charset=utf-8", produces="text/plain; charset=utf-8")
+	public ChessGameController(IChessGameService service) {
+		// TODO Auto-generated constructor stub
+		this.service = service;
+	}
+	
+	@RequestMapping(value = "/bestmove", method = RequestMethod.POST, consumes= "application/json; charset=utf-8", produces = "plain/text")
 	public ResponseEntity<String> getBestMove(@RequestBody ChessGame game) {
 		HttpStatus status = HttpStatus.NO_CONTENT;
 		
