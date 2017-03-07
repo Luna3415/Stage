@@ -4,8 +4,10 @@ import org.apache.el.parser.AstListData;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -48,6 +50,7 @@ public class ChessGameControllerTest {
 	@Mock
 	IChessGameService serviceMock;
 	
+	@InjectMocks
 	private ChessGameController chessController;
 	
 	@Autowired
@@ -65,7 +68,7 @@ public class ChessGameControllerTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		chessController = new ChessGameController(serviceMock);
+		//chessController = new ChessGameController(serviceMock);
 		mockMvc = MockMvcBuilders.standaloneSetup(chessController)
 				.build();
 	}
