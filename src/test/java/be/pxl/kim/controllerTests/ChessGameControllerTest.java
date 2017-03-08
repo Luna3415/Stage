@@ -77,7 +77,7 @@ public class ChessGameControllerTest {
 	public void getBestMoveTest() throws Exception {
 		ChessGame game = new ChessGame();
 		game.setFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
-		game.setWaitTime(10);
+		game.setDepth(10);
 		
 		Mockito.when(serviceMock.calculateBestMove(game)).thenReturn("It works!");
 		
