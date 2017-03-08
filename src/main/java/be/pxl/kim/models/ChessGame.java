@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class ChessGame {
 
 	String fen;
-	int waitTime;
+	int depth;
 	
 	public String getFen() {
 		return fen;
@@ -16,12 +16,12 @@ public class ChessGame {
 		this.fen = fen;
 	}
 	
-	public int getWaitTime() {
-		return waitTime;
+	public int getDepth() {
+		return depth;
 	}
 	
-	public void setWaitTime(int waitTime) {
-		this.waitTime = waitTime;
+	public void setDepth(int depth) {
+		this.depth = depth;
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class ChessGame {
 			return false;
 		}
 		
-		if (!other.fen.equals(this.fen) || other.waitTime != this.waitTime){
+		if (!other.fen.equals(this.fen) || other.depth != this.depth){
 			return false;
 		}
 		return true;

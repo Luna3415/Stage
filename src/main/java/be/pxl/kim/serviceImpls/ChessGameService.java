@@ -17,8 +17,7 @@ public class ChessGameService implements IChessGameService{
 		} else {
 			System.out.println("Oops! Something went wrong..");
 		}
-		chessEngine.getOutput(0);
-		String move = chessEngine.getBestMoveWithWaitTime(game.getFen(), game.getWaitTime());
+		String move = chessEngine.getBestMoveWithDepth(game.getFen(), game.getDepth());
 		return move;
 	}
 

@@ -81,6 +81,36 @@ public class Stockfish {
 		}
 		return buffer.toString();
 	}
+	
+	public String getOutputGoDepth() {
+		StringBuffer buffer = new StringBuffer();
+		String text = "";
+		try {
+			text = processReader.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			while (!text.startsWith("bestmove")) {
+				try {
+					text = processReader.readLine();
+					
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			buffer.append(text + "\n");
+		
+		return buffer.toString();
+	}
+	
+	public String getBestMoveWithDepth(String fen, int depth) {
+		sendCommand("position fen " + fen);
+		sendCommand("go depth " + depth);
+		
+		return getOutputGoDepth().split(" ")[1];
+	}
 
 	/**
 	 * This function returns the best move for a given position after
