@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Chess</title>
+    <script src="../js/chessBoard.js"  type="text/javascript"></script>
+    <script type="text/javascript">
+        window.addEventListener("load", chessGameLoaded, false);
+    </script>
+    <link rel="stylesheet" href="../css/chessBoardStyle.css">
 </head>
 <body>
-
+    <div id="chessBoardContainer">
+        <h2>changeable text</h2>
+        <canvas id="chessBoard" width="600" height="600">
+        </canvas>
+    </div>
 </body>
 </html>
