@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ChessGame {
 
-	String fen;
-	int depth;
+	private String fen;
+	private int depth;
 	
 	public String getFen() {
 		return fen;
